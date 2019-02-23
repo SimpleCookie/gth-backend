@@ -32,9 +32,43 @@ app.post("/api/activities", (req, res) => {
 
 app.use("/api/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
+// Skapa mockdata
+
+const random = (max, min = 0) => Math.floor(Math.random() * max) + min + 1;
+activities = [
+  "printing",
+  "Acrobatics",
+  "Acting",
+  "Amateur radio",
+  "Animation",
+  "Aquascaping",
+  "Baking",
+  "Baton twirling",
+  "Board/tabletop games",
+  "Book restoration",
+  "Cabaret",
+  "Brazilian jiu-jitsu",
+  "Calligraphy",
+  "Candle making",
+  "Coffee roasting",
+  "Collecting",
+  "Coloring",
+  "Computer programming",
+  "Cooking"
+];
 setTimeout(() => {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 10; i++) {
     User.create({});
-    Activity.create({ name: faker.userName, userID: i });
+  }
+  for (let i = 0; i < 5; i++) {
+    Activity.create({
+      name: activities[random(activities.length - 1)],
+      description: faker.lorem.paragraph(),
+      attendees: random(9, 1),
+      time: `${random(2)}${random(3)}:${random(5)}${random(9)}`,
+      longitude: faker.address.longitude(),
+      latitude: faker.address.latitude(),
+      userId: random(5)
+    });
   }
 }, 500);

@@ -22,7 +22,16 @@
             "name": {
               "type": "string",
               "example": "Spela tennis"
-            }
+            },
+            "attendees": { "type": "number", "example": "4" },
+            "difficulty": { "type": "number", "example": "2" },
+            "description": {
+              "type": "string",
+              "example": "Glöm inte bananerna!"
+            },
+            "time": { "type": "string", "example": "Under middag" },
+            "longitude": { "type": "number", "example": "17.232222" },
+            "latitude": { "type": "numbe", "example": "17.232222" }
           }
         }
       },
