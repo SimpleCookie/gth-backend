@@ -1,0 +1,47 @@
+{
+  "get": {
+    "x-swagger-router-controller": "middleware-name1",
+    "tags": ["/"],
+    "description": "Get all activities",
+    "parameters": [],
+    "responses": {}
+  },
+  "post": {
+    "x-swagger-router-controller": "middleware-name1",
+    "tags": ["/"],
+    "description": "Create a new activity",
+    "parameters": [
+      {
+        "in": "body",
+        "name": "activity",
+        "description": "The activity",
+        "schema": {
+          "type": "object",
+          "required": ["name"],
+          "properties": {
+            "name": {
+              "type": "string",
+              "example": "Spela tennis"
+            }
+          }
+        }
+      },
+      {
+        "in": "header",
+        "name": "user",
+        "description": "user id",
+        "schema": {
+          "type": "object",
+          "required": ["userId"],
+          "properties": {
+            "id": {
+              "type": "number",
+              "example": 1
+            }
+          }
+        }
+      }
+    ],
+    "responses": {}
+  }
+}

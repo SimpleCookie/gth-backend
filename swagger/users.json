@@ -1,0 +1,16 @@
+{
+  "get": {
+    "x-swagger-router-controller": "middleware-name1",
+    "tags": ["/"],
+    "description": "",
+    "parameters": [],
+    "responses": {}
+  },
+  "post": {
+    "x-swagger-router-controller": "middleware-name1",
+    "tags": ["/"],
+    "description": "",
+    "parameters": [],
+    "responses": {}
+  }
+}
